@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Header from "./Header";
 import box from "./assets/box.jpg";
 import losing from "./assets/losing.png";
+import food from "./assets/food.jpg";
+import food2 from "./assets/food2.png";
 import { Transition } from "react-spring/renderprops";
 
 const TextBlock = styled.div`
@@ -46,7 +48,7 @@ const ContentsBlock = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 3rem;
   padding: 0 1rem;
 `;
 
@@ -57,38 +59,66 @@ const ContentsContainer = styled.div`
   align-items: center;
   width: 50rem;
   height: 30rem;
-  /* background: black; */
+
   .box0 {
+    display: flex;
+    justify-content: center;
+
     img {
-      width: 100%;
+      @media (max-width: 1536px) {
+        width: 80%;
+        cursor: pointer;
+      }
+      @media (max-width: 768px) {
+        width: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .box1 {
+    display: flex;
+    justify-content: center;
+
+    img {
+      @media (max-width: 1536px) {
+        width: 15rem;
+        cursor: pointer;
+      }
+      @media (max-width: 768px) {
+        width: 17rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .box2 {
+    display: flex;
+    justify-content: center;
+
+    img {
+      @media (max-width: 1536px) {
+        width: 25rem;
+        cursor: pointer;
+      }
+      @media (max-width: 768px) {
+        width: 20rem;
+        cursor: pointer;
+      }
     }
   }
 `;
 
-const Button = styled.button`
-  border: none;
-  border-radius: 4px;
-  font-size: 1.3rem;
-  font-weight: bold;
-  padding: 0.25rem 1rem;
-  color: black;
-  outline: none;
-  cursor: pointer;
-  float: right;
-`;
-
 const Gift = () => {
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const [number, setNumber] = useState("");
   const onToggle = () => {
     setToggle(!toggle);
     setNumber(Math.round(Math.random() * 2));
   };
-
-  // 0~2까지 랜덤
-
-  const random = () => {};
-
+  const onToggleFalse = () => {
+    setToggle(false);
+  };
   // useEffect(() => {
   //   console.log(number1, number2, number3);
   // }, [number1, number2, number3]);
@@ -100,7 +130,7 @@ const Gift = () => {
     <>
       <Header />
       <TextBlock>
-        <h2 onClick={random}>
+        <h2>
           두근두근 랜덤 뽑기!
           <br />
           선물을 골라주세요
@@ -117,12 +147,24 @@ const Gift = () => {
           toggle
             ? (props) => (
                 // toggle가 true일때 선물박스안의 선물을보여줌
-                <ContentsBlock style={props} onClick={onToggle}>
+                <ContentsBlock style={props} onClick={onToggleFalse}>
                   <ContentsContainer>
-                    <div className="box0">
-                      <img src={losing} width="300" alt="꽝" />
-                      <Button>Again..</Button>
-                    </div>
+                    {number === 0 && (
+                      <div className="box0">
+                        <img src={losing} width="300" alt="꽝" />
+                      </div>
+                    )}
+                    {number === 1 && (
+                      <div className="box1">
+                        <img src={food} width="300" alt="꽝" />
+                      </div>
+                    )}
+
+                    {number === 2 && (
+                      <div className="box2">
+                        <img src={food2} width="300" alt="꽝" />
+                      </div>
+                    )}
                   </ContentsContainer>
                 </ContentsBlock>
               )
