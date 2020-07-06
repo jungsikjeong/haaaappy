@@ -123,9 +123,6 @@ const Gift = () => {
   //   console.log(number1, number2, number3);
   // }, [number1, number2, number3]);
 
-  useEffect(() => {
-    console.log(number);
-  });
   return (
     <>
       <Header />
