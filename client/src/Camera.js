@@ -82,6 +82,10 @@ const Camera = () => {
     setImgSrc(imageSrc);
   }, [webcamRef, setImgSrc, imgSrc]);
 
+  // 핸드폰 셀프카메라 on
+  const videoConstraints = {
+    facingMode: "user",
+  };
   return (
     <>
       <Header />
@@ -99,6 +103,7 @@ const Camera = () => {
             audio={false}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
+            videoConstraints={videoConstraints}
           />
         )}
 
