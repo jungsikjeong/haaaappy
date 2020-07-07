@@ -69,7 +69,8 @@ const ContentsContainer = styled.div`
         cursor: pointer;
       }
       @media (max-width: 768px) {
-        width: 10rem;
+        width: 15rem;
+        height: 15rem;
         cursor: pointer;
       }
     }
@@ -85,7 +86,8 @@ const ContentsContainer = styled.div`
         cursor: pointer;
       }
       @media (max-width: 768px) {
-        width: 10rem;
+        width: 15rem;
+        height: 15rem;
         cursor: pointer;
       }
     }
@@ -98,10 +100,12 @@ const ContentsContainer = styled.div`
     img {
       @media (max-width: 1536px) {
         width: 25rem;
+
         cursor: pointer;
       }
       @media (max-width: 768px) {
-        width: 10rem;
+        width: 15rem;
+        height: 15rem;
         cursor: pointer;
       }
     }
@@ -144,18 +148,18 @@ const Gift = () => {
                   <ContentsContainer>
                     {number === 0 && (
                       <div className="box0">
-                        <img src={losing} width="100" alt="꽝" />
+                        <img src={losing} width="300" alt="꽝" />
                       </div>
                     )}
                     {number === 1 && (
                       <div className="box1">
-                        <img src={food} width="100" alt="꽝" />
+                        <img src={food} width="300" alt="꽝" />
                       </div>
                     )}
 
                     {number === 2 && (
                       <div className="box2">
-                        <img src={food2} width="100" alt="꽝" />
+                        <img src={food2} width="300" alt="꽝" />
                       </div>
                     )}
                   </ContentsContainer>
