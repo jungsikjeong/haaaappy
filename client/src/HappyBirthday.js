@@ -19,7 +19,6 @@ const HbdBlock = styled.div`
     }
 
     @media (max-width: 768px) {
-      /* margin-top: 3rem; */
       width: 350px;
       height: 400px;
     }
@@ -29,13 +28,9 @@ const HbdBlock = styled.div`
 const Player = styled(ReactAudioPlayer)`
   width: 100%;
   padding: 0 1rem;
-  /* margin: 1rem; */
 `;
 
 const HappyBirthday = () => {
-  const Restart = () => {
-    //
-  };
   return (
     <>
       <Header />

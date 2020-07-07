@@ -70,7 +70,7 @@ const ContentsContainer = styled.div`
         cursor: pointer;
       }
       @media (max-width: 768px) {
-        width: 100%;
+        width: 20rem;
         cursor: pointer;
       }
     }
