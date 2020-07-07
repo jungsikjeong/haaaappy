@@ -49,7 +49,6 @@ const ImageContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    /* margin-top: 3rem; */
     width: 350px;
     height: 400px;
   }
@@ -63,7 +62,6 @@ const Image = styled.img`
   }
 
   @media (max-width: 768px) {
-    /* margin-top: 3rem; */
     width: 350px;
     height: 400px;
   }

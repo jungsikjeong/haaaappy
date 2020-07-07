@@ -14,7 +14,12 @@ const TextBlock = styled.div`
   h2 {
     display: block;
     margin-top: 3rem;
+    margin-bottom: 0;
     font-weight: bold;
+  }
+  span {
+    color: #f08c00;
+    opacity: 0.7;
   }
 `;
 
@@ -48,7 +53,6 @@ const ContentsBlock = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 3rem;
   padding: 0 1rem;
 `;
 
@@ -58,7 +62,8 @@ const ContentsContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 50rem;
-  height: 30rem;
+  margin-top: 1rem;
+  /* height: 30rem; */
 
   .box0 {
     display: flex;
@@ -70,7 +75,7 @@ const ContentsContainer = styled.div`
       }
       @media (max-width: 768px) {
         width: 15rem;
-        height: 15rem;
+        height: 20rem;
         cursor: pointer;
       }
     }
@@ -87,7 +92,7 @@ const ContentsContainer = styled.div`
       }
       @media (max-width: 768px) {
         width: 15rem;
-        height: 15rem;
+        height: 20rem;
         cursor: pointer;
       }
     }
@@ -105,7 +110,7 @@ const ContentsContainer = styled.div`
       }
       @media (max-width: 768px) {
         width: 15rem;
-        height: 15rem;
+        height: 20rem;
         cursor: pointer;
       }
     }
@@ -115,6 +120,9 @@ const ContentsContainer = styled.div`
 const Gift = () => {
   const [toggle, setToggle] = useState(false);
   const [number, setNumber] = useState("");
+
+  const images = [0, 1, 2];
+
   const onToggle = () => {
     setToggle(!toggle);
     setNumber(Math.round(Math.random() * 2));
@@ -128,7 +136,7 @@ const Gift = () => {
       <Header />
       <TextBlock>
         <h2>
-          두근두근 랜덤 뽑기!
+          두근두근 <span>랜덤 뽑기!</span>
           <br />
           선물을 골라주세요
         </h2>
@@ -143,23 +151,23 @@ const Gift = () => {
         {(toggle) =>
           toggle
             ? (props) => (
-                // toggle가 true일때 선물박스안의 선물을보여줌
+                // toggle이 true일때 선물박스안의 선물을보여줌
                 <ContentsBlock style={props} onClick={onToggleFalse}>
                   <ContentsContainer>
                     {number === 0 && (
                       <div className="box0">
-                        <img src={losing} width="300" alt="꽝" />
+                        <img src={losing} width="300" alt="images" />
                       </div>
                     )}
                     {number === 1 && (
                       <div className="box1">
-                        <img src={food} width="300" alt="꽝" />
+                        <img src={food} width="300" alt="images" />
                       </div>
                     )}
 
                     {number === 2 && (
                       <div className="box2">
-                        <img src={food2} width="300" alt="꽝" />
+                        <img src={food2} width="300" alt="images" />
                       </div>
                     )}
                   </ContentsContainer>
@@ -168,9 +176,16 @@ const Gift = () => {
             : (props) => (
                 // toggle가 false일때 선물박스를 보여줌
                 <GiftBlock style={props}>
-                  <img src={box} alt="images" onClick={onToggle} />
-                  <img src={box} alt="images" onClick={onToggle} />
-                  <img src={box} alt="images" onClick={onToggle} />
+                  {images.map((image, index) => (
+                    <img
+                      key={index}
+                      src={box}
+                      alt="images"
+                      onClick={onToggle}
+                    />
+                  ))}
+                  {/* <img src={box} alt="images" onClick={onToggle} />
+                  <img src={box} alt="images" onClick={onToggle} /> */}
                 </GiftBlock>
               )
         }
