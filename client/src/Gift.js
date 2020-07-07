@@ -63,7 +63,7 @@ const ContentsContainer = styled.div`
   .box0 {
     display: flex;
     justify-content: center;
-    = img {
+    img {
       @media (max-width: 1536px) {
         width: 80%;
         cursor: pointer;
