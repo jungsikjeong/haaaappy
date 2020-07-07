@@ -31,7 +31,7 @@ const Home = () => {
       <Header />
       <HomeBlock>
         <div className="imgBox">
-          <img src={friend} alt="images" width="500" height="500" />
+          {/* <img src={friend} alt="images" width="500" height="500" /> */}
         </div>
       </HomeBlock>
     </>
