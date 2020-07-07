@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Responsive from "./common/Responsive";
+import logo from "./assets/logo.gif";
 
 const Container = styled(Responsive)``;
 
@@ -32,10 +33,7 @@ const Header = () => {
     <Container>
       <ImageBlock>
         <Link to="/">
-          <img
-            src="https://media.vlpt.us/images/2ujin/post/a09d8fbe-5322-4da7-9e0f-ed353fc625d9/IMG_0270.GIF"
-            alt="images"
-          />
+          <img src={logo} alt="images" />
         </Link>
       </ImageBlock>
 
