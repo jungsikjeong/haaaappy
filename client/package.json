@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "vercel-deploy": "next build && next export"
+    "vercel-deploy": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
