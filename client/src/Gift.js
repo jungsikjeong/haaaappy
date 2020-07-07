@@ -63,14 +63,13 @@ const ContentsContainer = styled.div`
   .box0 {
     display: flex;
     justify-content: center;
-
-    img {
+    = img {
       @media (max-width: 1536px) {
         width: 80%;
         cursor: pointer;
       }
       @media (max-width: 768px) {
-        width: 20rem;
+        width: 10rem;
         cursor: pointer;
       }
     }
@@ -86,7 +85,7 @@ const ContentsContainer = styled.div`
         cursor: pointer;
       }
       @media (max-width: 768px) {
-        width: 17rem;
+        width: 10rem;
         cursor: pointer;
       }
     }
@@ -102,7 +101,7 @@ const ContentsContainer = styled.div`
         cursor: pointer;
       }
       @media (max-width: 768px) {
-        width: 20rem;
+        width: 10rem;
         cursor: pointer;
       }
     }
@@ -119,9 +118,6 @@ const Gift = () => {
   const onToggleFalse = () => {
     setToggle(false);
   };
-  // useEffect(() => {
-  //   console.log(number1, number2, number3);
-  // }, [number1, number2, number3]);
 
   return (
     <>
@@ -148,18 +144,18 @@ const Gift = () => {
                   <ContentsContainer>
                     {number === 0 && (
                       <div className="box0">
-                        <img src={losing} width="300" alt="꽝" />
+                        <img src={losing} width="100" alt="꽝" />
                       </div>
                     )}
                     {number === 1 && (
                       <div className="box1">
-                        <img src={food} width="300" alt="꽝" />
+                        <img src={food} width="100" alt="꽝" />
                       </div>
                     )}
 
                     {number === 2 && (
                       <div className="box2">
-                        <img src={food2} width="300" alt="꽝" />
+                        <img src={food2} width="100" alt="꽝" />
                       </div>
                     )}
                   </ContentsContainer>
