@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import Home from "./Home";
 import Gift from "./Gift";
 import Letter from "./Letter";
-import Camera from "./Camera";
+import Camera1 from "./Camera1";
 import HappyBirthday from "./HappyBirthday";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <Route component={Home} path="/" exact />
       <Route component={Gift} path="/gift" exact />
       <Route component={Letter} path="/letter" />
-      <Route component={Camera} path="/camera" />
+      <Route component={Camera1} path="/Camera" />
       <Route component={HappyBirthday} path="/hbd" />
     </>
   );
