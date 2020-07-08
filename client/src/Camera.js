@@ -86,29 +86,42 @@ const Image = styled.img`
 `;
 
 const Camera = () => {
-  const webcamRef = useRef(null);
-  const [imgSrc, setImgSrc] = useState(null);
+  const [deviceId, setDeviceId] = React.useState({});
+  const [devices, setDevices] = React.useState([]);
 
-  const capture = useCallback(() => {
-    if (imgSrc) {
-      setImgSrc(null);
-      return;
-    }
-    const imageSrc = webcamRef.current.getScreenshot();
-    setImgSrc(imageSrc);
-  }, [webcamRef, setImgSrc, imgSrc]);
+  const handleDevices = React.useCallback(
+    (mediaDevices) =>
+      setDevices(mediaDevices.filter(({ kind }) => kind === "videoinput")),
+    [setDevices]
+  );
+
+  React.useEffect(() => {
+    navigator.mediaDevices.enumerateDevices().then(handleDevices);
+  }, [handleDevices]);
+
+  // const webcamRef = useRef(null);
+  // const [imgSrc, setImgSrc] = useState(null);
+
+  // const capture = useCallback(() => {
+  //   if (imgSrc) {
+  //     setImgSrc(null);
+  //     return;
+  //   }
+  //   const imageSrc = webcamRef.current.getScreenshot();
+  //   setImgSrc(imageSrc);
+  // }, [webcamRef, setImgSrc, imgSrc]);
 
   // 핸드폰 셀프카메라 on
-  const videoConstraints = {
-    width: 350,
-    height: 400,
-    facingMode: "user",
-  };
+  // const videoConstraints = {
+  //   width: 350,
+  //   height: 400,
+  //   facingMode: "user",
+  // };
   return (
     <>
       <Header />
       <CameraBlock>
-        {imgSrc ? (
+        {/* {imgSrc ? (
           <ImageContainer>
             <Image src={imgSrc} />
             <div className="text">
@@ -118,7 +131,7 @@ const Camera = () => {
           </ImageContainer>
         ) : (
           <WebcamStyle
-            // audio={false}
+            audio={false}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
             videoConstraints={videoConstraints}
@@ -127,7 +140,16 @@ const Camera = () => {
 
         <div className="captureBtn" onClick={capture}>
           📸
-        </div>
+        </div> */}
+        {devices.map((device, key) => (
+          <div>
+            <Webcam
+              audio={false}
+              videoConstraints={{ deviceId: device.deviceId }}
+            />
+            {device.label || `Device ${key + 1}`}
+          </div>
+        ))}
       </CameraBlock>
     </>
   );
