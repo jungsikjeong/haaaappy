@@ -18,7 +18,8 @@ const HomeBlock = styled(Responsive)`
     }
 
     @media (max-width: 768px) {
-      width: 400px;
+      width: 370px;
+      height: 350px;
       padding: 0 2rem;
       margin: 3rem auto 3rem auto;
     }
