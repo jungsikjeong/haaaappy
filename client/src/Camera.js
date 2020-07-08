@@ -38,12 +38,16 @@ const ImageContainer = styled.div`
     background: white;
     margin-top: 3rem;
     width: 890px;
-    height: 700px;
+    height: 800px;
     .text {
       margin: 0 auto;
       h2,
       h3 {
+        margin: 0 auto;
         text-align: center;
+      }
+      h3 {
+        margin-top: 1rem;
       }
     }
   }
@@ -51,19 +55,33 @@ const ImageContainer = styled.div`
   @media (max-width: 768px) {
     width: 350px;
     height: 400px;
+    .text {
+      margin: 0 auto;
+      h2,
+      h3 {
+        margin: 0 auto;
+        text-align: center;
+      }
+      h3 {
+        margin-top: 0.8rem;
+      }
+    }
   }
 `;
 
 const Image = styled.img`
   @media (max-width: 1536px) {
-    padding: 1rem;
-    width: 890px;
-    height: 650px;
+    /* padding: 1rem; */
+    margin: 0 auto;
+    width: 850px;
+    height: 700px;
   }
 
   @media (max-width: 768px) {
-    width: 350px;
-    height: 400px;
+    padding: 1rem;
+    margin: 0 auto;
+    width: 320px;
+    height: 390px;
   }
 `;
 
