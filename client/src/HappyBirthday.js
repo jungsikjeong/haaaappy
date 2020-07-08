@@ -4,6 +4,7 @@ import styled from "styled-components";
 import cake from "./assets/cake.gif";
 import ReactAudioPlayer from "react-audio-player";
 import song from "./assets/song.mp3";
+import { Helmet } from "react-helmet-async";
 
 const HbdBlock = styled.div`
   display: flex;
@@ -35,6 +36,9 @@ const HappyBirthday = () => {
     <>
       <Header />
       <HbdBlock>
+        <Helmet>
+          <title>HappyBirthday - happyDay</title>
+        </Helmet>
         <img src={cake} alt="cakeImage" />
         <Player src={song} autoPlay loop />
       </HbdBlock>

@@ -3,6 +3,7 @@ import Header from "./Header";
 import styled from "styled-components";
 import friend from "./assets/friend.jpg";
 import Responsive from "./common/Responsive";
+import { Helmet } from "react-helmet-async";
 
 const HomeBlock = styled(Responsive)`
   .imgBox {
@@ -31,6 +32,9 @@ const Home = () => {
     <>
       <Header />
       <HomeBlock>
+        {/* <Helmet>
+          <title>Home - happyDay</title>
+        </Helmet> */}
         <div className="imgBox">
           <img src={friend} alt="images" width="500" height="500" />
         </div>

@@ -6,6 +6,7 @@ import losing from "./assets/losing.png";
 import food from "./assets/food.jpg";
 import food2 from "./assets/food2.png";
 import { Transition } from "react-spring/renderprops";
+import { Helmet } from "react-helmet-async";
 
 const TextBlock = styled.div`
   display: flex;
@@ -134,6 +135,9 @@ const Gift = () => {
   return (
     <>
       <Header />
+      <Helmet>
+        <title>Gift - happyDay</title>
+      </Helmet>
       <TextBlock>
         <h2>
           두근두근 <span>랜덤 뽑기!</span>

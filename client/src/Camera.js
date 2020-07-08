@@ -2,6 +2,7 @@ import React, { useState, useCallback, useRef, useEffect } from "react";
 import Header from "./Header";
 import styled from "styled-components";
 import Webcam from "react-webcam";
+import { Helmet } from "react-helmet-async";
 
 const CameraBlock = styled.div`
   display: flex;
@@ -108,6 +109,9 @@ const Camera = () => {
     <>
       <Header />
       <CameraBlock>
+        <Helmet>
+          <title>Camera - happyDay</title>
+        </Helmet>
         {imgSrc ? (
           <ImageContainer>
             <Image src={imgSrc} />
