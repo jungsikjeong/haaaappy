@@ -100,6 +100,8 @@ const Camera = () => {
 
   // 핸드폰 셀프카메라 on
   const videoConstraints = {
+    width: 350,
+    height: 400,
     facingMode: "user",
   };
   return (
