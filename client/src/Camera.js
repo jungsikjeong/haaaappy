@@ -1,15 +1,7 @@
-import React, {
-  Fragment,
-  useState,
-  useCallback,
-  useRef,
-  useEffect,
-} from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import Header from "./Header";
 import styled from "styled-components";
 import Webcam from "react-webcam";
-
-import { Camera } from "react-cam";
 
 const CameraBlock = styled.div`
   display: flex;
@@ -93,7 +85,7 @@ const Image = styled.img`
   }
 `;
 
-const Camera1 = () => {
+const Camera = () => {
   const webcamRef = useRef(null);
   const [imgSrc, setImgSrc] = useState(null);
 
@@ -112,46 +104,33 @@ const Camera1 = () => {
     height: 400,
     facingMode: "user",
   };
-
-  const cam = useRef(null);
-
   return (
     <>
       <Header />
       <CameraBlock>
-        <Fragment>
-          <Camera
-            showFocus={true}
-            front={false}
-            capture={capture}
-            ref={cam}
-            width="80%"
-            height="auto"
-            focusWidth="80%"
-            focusHeight="60%"
-            btnColor="white"
+        {imgSrc ? (
+          <ImageContainer>
+            <Image src={imgSrc} />
+            <div className="text">
+              <h2>2020.08.11</h2>
+              <h3>차누리 생일 기념 🎂</h3>
+            </div>
+          </ImageContainer>
+        ) : (
+          <WebcamStyle
+            audio={false}
+            ref={webcamRef}
+            screenshotFormat="image/jpeg"
+            videoConstraints={videoConstraints}
           />
-          <button onClick={(img) => cam.current.capture(img)}>
-            Take image
-          </button>
-        </Fragment>
+        )}
+
+        <div className="captureBtn" onClick={capture}>
+          📸
+        </div>
       </CameraBlock>
     </>
   );
 };
 
-export default Camera1;
-
-// @media (max-width: 1536px) {
-//   width: 220px;
-//   margin: 0 auto;
-//   padding: 0 1rem;
-//   animation-delay: 0s;
-// }
-
-// @media (max-width: 768px) {
-//   width: 220px;
-//   margin: 0 auto;
-//   padding: 0 1rem;
-//   animation-delay: 0s;
-// }
+export default Camera;
