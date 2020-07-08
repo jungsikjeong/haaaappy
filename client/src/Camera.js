@@ -118,7 +118,7 @@ const Camera = () => {
           </ImageContainer>
         ) : (
           <WebcamStyle
-            audio={false}
+            // audio={false}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
             videoConstraints={videoConstraints}
