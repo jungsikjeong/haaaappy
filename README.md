@@ -4,6 +4,3 @@
 
 - React Styled-components 이용하여 만듦
 
-- 간단한 프로젝트로 댓글 기능과 로그인,회원가입 기능만 구현할것이기에 컴포넌트 프레젠트 구조로 짜지않았음!
-
-- yarn `No!!` npm install `Yes!!!!!!`
